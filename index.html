@@ -24,9 +24,13 @@
     <div id="plot1"></div>
     <div id="plot2"></div>
     <script>
+        const originalX = [];
         // Extract Correct Data 
         function extractData(obj) {
-            alert(obj.Horsepower);
+            for (i = 0; i <= 400; i++) {
+                originalX[i] = obj.Horsepower;
+                alert("OriginalX: " + originalX[i]);
+            }
             return {
                 x: obj.Horsepower,
                 y: obj.Miles_per_Gallon
