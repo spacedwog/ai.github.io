@@ -26,9 +26,6 @@
     <script>
         // Extract Correct Data 
         function extractData(obj) {
-
-            alert("OriginalX: " + obj.Horsepower +
-                "\nOriginalY: " + obj.Miles_per_Gallon);
             return {
                 x: obj.Horsepower,
                 y: obj.Miles_per_Gallon
@@ -107,8 +104,6 @@
 
             // Test the Model
             const predicted = Array.from(unX).map((val, i) => {
-                alert("PredictedX: " + val +
-                    "\nPredictedY: " + unY[i]);
                 return {
                     x: val,
                     y: unY[i]
