@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    </head>
+
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
 <body>
-<h1>Using Plotly.js</h1>
+    <h1>Using Plotly.js</h1>
 
-<button onclick='plot("scatter")'>Scatter</button>
-<button onclick='plot("lines")'>Draw Lines</button>
+    <button onclick='plot("scatter")'>Scatter</button>
+    <button onclick='plot("lines")'>Draw Lines</button>
 
-<div id="myPlot" style="width:100%;max-width:700px"></div>
+    <div id="myPlot" style="width:100%;max-width:700px"></div>
 
-<script>
+    <script>
+        function getLocation() {
+            alert("getLocation()");
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
 
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-
-
-function plot(type) {
-    getLocation();
-const xArray = document.getElementById("xvalues").value.split(',');
-const yArray = document.getElementById("yvalues").value.split(',');
-let mode = "lines";
-if (type == "scatter") {mode = "markers"}
-  Plotly.newPlot("myPlot", [{x:xArray, y:yArray, mode:mode, type:"scatter"}]);
-}
-</script>
+        function plot(type) {
+            getLocation();
+            const xArray = document.getElementById("xvalues").value.split(',');
+            const yArray = document.getElementById("yvalues").value.split(',');
+            let mode = "lines";
+            if (type == "scatter") {
+                mode = "markers"
+            }
+            Plotly.newPlot("myPlot", [{
+                x: xArray,
+                y: yArray,
+                mode: mode,
+                type: "scatter"
+            }]);
+        }
+    </script>
 
 </body>
+
 </html>
