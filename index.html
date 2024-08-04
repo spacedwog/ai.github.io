@@ -27,7 +27,6 @@
 
     <script>
         function getLocation() {
-            alert("getLocation(2)");
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
@@ -36,8 +35,6 @@
         }
 
         function showPosition(position) {
-
-            alert("showPosition");
 
             localStorage.setItem("latitude", position.coords.latitude);
             localStorage.setItem("longitude", position.coords.longitude);
