@@ -30,8 +30,6 @@
         const PredictedY = [""];
         // Extract Correct Data 
         function extractData(obj) {
-            OriginalX[obj.Horsepower];
-            OriginalY[obj.Miles_per_Gallon];
             return {
                 x: obj.Horsepower,
                 y: obj.Miles_per_Gallon
@@ -67,6 +65,9 @@
             // Convert Input to Tensors
             const inputs = values.map(obj => obj.x);
             const labels = values.map(obj => obj.y);
+
+            OriginalX[inputs];
+            OriginalY[labels];
 
             alert("OriginalX[0]: " + OriginalX[0]);
 
