@@ -38,7 +38,6 @@
 
         // Plot Data
         function tfPlot(values, surface) {
-            alert("Series: " + values);
             tfvis.render.scatterplot(surface, {
                 values: values,
                 series: ['Original', 'Predicted']
@@ -109,6 +108,7 @@
                     y: unY[i]
                 }
             });
+            alert(predicted);
             tfPlot([values, predicted], surface1)
 
             // End Main Function
