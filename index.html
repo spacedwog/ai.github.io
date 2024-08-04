@@ -98,7 +98,7 @@
         // Asyncronous Function to Train the Model
         async function trainModel(model, inputs, labels, surface) {
             alert("Model: " + model + "\nInputs: " + inputs +
-                "\nLabels: " + labels + "Surface: " + surface);
+                "\nLabels: " + labels + "\nSurface: " + surface);
             const batchSize = 10;
             const epochs = 50;
             const callbacks = tfvis.show.fitCallbacks(surface, ['loss'], {
