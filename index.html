@@ -24,10 +24,6 @@
     <div id="plot1"></div>
     <div id="plot2"></div>
     <script>
-        const OriginalX = [""];
-        const OriginalY = [""];
-        const PredictedX = [""];
-        const PredictedY = [""];
         // Extract Correct Data 
         function extractData(obj) {
             return {
@@ -65,11 +61,6 @@
             // Convert Input to Tensors
             const inputs = values.map(obj => obj.x);
             const labels = values.map(obj => obj.y);
-
-            OriginalX[inputs];
-            OriginalY[labels];
-
-            alert("OriginalX: " + OriginalX[0]);
 
             const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
             const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
