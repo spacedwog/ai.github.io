@@ -49,7 +49,7 @@
 
         // Main Function
         async function runTF() {
-            const jsonData = await fetch("houses.json");
+            const jsonData = await fetch("https://github.com/meetnandu05/ml1/blob/master/house.json");
             let values = await jsonData.json();
             values = values.map(extractData).filter(removeErrors);
 
