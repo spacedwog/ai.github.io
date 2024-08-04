@@ -39,15 +39,19 @@
 
         function showPosition(position) {
 
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
+            localStorage.setItem("latitude", position.coords.latitude);
+            localStorage.setItem("longitude", position.coords.longitude);
         }
 
 
         function plot(type) {
             getLocation();
-            const xArray = document.getElementById("xvalues").value.split(',');
-            const yArray = document.getElementById("yvalues").value.split(',');
+
+            var latitude = localStorage.getItem("latitude");
+            var longitude = localStorage.getItem("longitude");
+
+            const xArray = latitude.split(',');
+            const yArray = longitude.split(',');
             let mode = "lines";
             if (type == "scatter") {
                 mode = "markers"
