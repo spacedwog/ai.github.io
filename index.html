@@ -103,7 +103,8 @@
 
             // Test the Model
             const predicted = Array.from(unX).map((val, i) => {
-                alert(val);
+                alert("PredictedX: " + val +
+                    "\nPredictedY: " + unY[i]);
                 return {
                     x: val,
                     y: unY[i]
