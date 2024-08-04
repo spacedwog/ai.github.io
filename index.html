@@ -24,8 +24,14 @@
     <div id="plot1"></div>
     <div id="plot2"></div>
     <script>
+        const OriginalX = [""];
+        const OriginalY = [""];
+        const PredictedX = [""];
+        const PredictedY = [""];
         // Extract Correct Data 
         function extractData(obj) {
+            OriginalX[obj.Horsepower];
+            OriginalY[obj.Miles_per_Gallon];
             return {
                 x: obj.Horsepower,
                 y: obj.Miles_per_Gallon
