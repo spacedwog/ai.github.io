@@ -38,6 +38,12 @@
 
         // Plot Data
         function tfPlot(values, surface) {
+
+            if (series == 'Predicted') {
+                alert("1");
+            } else if (series == 'Original') {
+                alert("2");
+            }
             tfvis.render.scatterplot(surface, {
                 values: values,
                 series: ['Original', 'Predicted']
