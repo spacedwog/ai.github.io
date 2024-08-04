@@ -26,6 +26,9 @@
     <script>
         // Extract Correct Data 
         function extractData(obj) {
+
+            alert("OriginalX: " + obj.Horsepower +
+                "\nOriginalY: " + obj.Miles_per_Gallon);
             return {
                 x: obj.Horsepower,
                 y: obj.Miles_per_Gallon
@@ -61,9 +64,6 @@
             // Convert Input to Tensors
             const inputs = values.map(obj => obj.x);
             const labels = values.map(obj => obj.y);
-
-            alert("OriginalX: " + inputs +
-                "\nOriginalY: " + labels);
 
             const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
             const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
