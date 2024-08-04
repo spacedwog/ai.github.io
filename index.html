@@ -53,7 +53,7 @@
             let values = await jsonData.json();
             values = values.map(extractData).filter(removeErrors);
 
-            alert("OriginalX: " + values["Horsepower"]);
+            alert("OriginalX: " + values);
 
             // Plot the Data
             const surface1 = document.getElementById("plot1");
