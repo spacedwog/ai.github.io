@@ -68,7 +68,7 @@
             const inputs = values.map(obj => obj.x);
             const labels = values.map(obj => obj.y);
 
-            alert("OriginalX: " + OriginalX[0]);
+            alert("OriginalX[0]: " + OriginalX[0]);
 
             const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
             const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
