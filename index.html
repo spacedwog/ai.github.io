@@ -27,8 +27,8 @@
         // Extract Correct Data 
         function extractData(obj) {
             return {
-                x: obj.AvgAreaNumberofRooms,
-                y: obj.Price
+                x: obj.Horsepower,
+                y: obj.Miles_per_Gallon
             };
         }
 
@@ -42,14 +42,14 @@
                 values: values,
                 series: ['Original', 'Predicted']
             }, {
-                xLabel: 'Rooms',
-                yLabel: 'Price',
+                xLabel: 'Horsepower',
+                yLabel: 'MPG',
             });
         }
 
         // Main Function
         async function runTF() {
-            const jsonData = await fetch("houses.json");
+            const jsonData = await fetch("cardata.json");
             let values = await jsonData.json();
             values = values.map(extractData).filter(removeErrors);
 
@@ -57,9 +57,6 @@
             const surface1 = document.getElementById("plot1");
             const surface2 = document.getElementById("plot2");
             tfPlot(values, surface1);
-
-            // Shuffle the Data
-            tf.util.shuffle(values);
 
             // Convert Input to Tensors
             const inputs = values.map(obj => obj.x);
@@ -70,8 +67,8 @@
             const inputMax = inputTensor.max();
             const labelMin = labelTensor.min();
             const labelMax = labelTensor.max();
-            const normInputs = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
-            const normLabels = labelTensor.sub(labelMin).div(labelMax.sub(labelMin));
+            const nmInputs = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
+            const nmLabels = labelTensor.sub(labelMin).div(labelMax.sub(labelMin));
 
             // Create a Tensorflow Model
             const model = tf.sequential();
@@ -90,14 +87,35 @@
             });
 
             // Start Training
-            await trainModel(model, normInputs, normLabels, surface2);
+            await trainModel(model, nmInputs, nmLabels, surface2);
+
+            // Un-Normalize Data
+            let unX = tf.linspace(0, 1, 100);
+            let unY = model.predict(unX.reshape([100, 1]));
+            const unNormunX = unX
+                .mul(inputMax.sub(inputMin))
+                .add(inputMin);
+            const unNormunY = unY
+                .mul(labelMax.sub(labelMin))
+                .add(labelMin);
+            unX = unNormunX.dataSync();
+            unY = unNormunY.dataSync();
+
+            // Test the Model
+            const predicted = Array.from(unX).map((val, i) => {
+                return {
+                    x: val,
+                    y: unY[i]
+                }
+            });
+            tfPlot([values, predicted], surface1)
 
             // End Main Function
         }
 
         // Asyncronous Function to Train the Model
         async function trainModel(model, inputs, labels, surface) {
-            const batchSize = 10;
+            const batchSize = 25;
             const epochs = 50;
             const callbacks = tfvis.show.fitCallbacks(surface, ['loss'], {
                 callbacks: ['onEpochEnd']
@@ -112,5 +130,6 @@
 
         runTF();
     </script>
+</body>
 
 </html>
