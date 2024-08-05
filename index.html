@@ -63,14 +63,6 @@
             const inputs = values.map(obj => obj.x);
             const labels = values.map(obj => obj.y);
 
-            //const x1 = inputs.sort(function(a, b) {
-            //    return a - b
-            //});
-
-            //const y1 = labels.sort(function(a, b) {
-            //    return a - b
-            //});
-
             alert("X1: " + inputs + "\nY1: " + labels);
 
             const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
