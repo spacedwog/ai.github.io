@@ -63,7 +63,15 @@
             const inputs = values.map(obj => obj.x);
             const labels = values.map(obj => obj.y);
 
-            alert("X1: " + inputs[0] + "\nY1: " + labels[0]);
+            const x1 = inputs.sort(function(a, b) {
+                return a - b
+            });
+
+            const y1 = labels.sort(function(a, b) {
+                return a - b
+            });
+
+            alert("X1: " + x1[0] + "\nY1: " + y1[0]);
 
             const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
             const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
@@ -104,6 +112,12 @@
                 .add(labelMin);
             unX = unNormunX.dataSync();
             unY = unNormunY.dataSync();
+
+            for (i = 0; i <= 400; i++) {
+                if (unX[i] == inputs[i]) {
+
+                }
+            }
 
             alert("X2: " + unX + "\nY2: " + unY);
 
