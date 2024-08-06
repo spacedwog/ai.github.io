@@ -1,5 +1,7 @@
 const eixoX;
 const eixoY;
+const positionX;
+const positionY;
 
 function find_array(eixoX, eixoY, predictedX, predictedY) {
     let first = eixoX.find(find_array);
@@ -7,6 +9,7 @@ function find_array(eixoX, eixoY, predictedX, predictedY) {
 }
 
 function find_Xarray(value, index, array) {
+    let position = value
     setEixoX(value);
 }
 
