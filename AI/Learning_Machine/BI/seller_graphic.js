@@ -13,7 +13,7 @@ async function runTF() {
     // Convert Input to Tensors
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
-    const veloci = values.map(obj => obj.kmL);
+    const veloci = labels * 0.425;
 
     alert(veloci);
 
