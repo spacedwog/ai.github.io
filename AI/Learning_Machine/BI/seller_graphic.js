@@ -57,10 +57,6 @@ async function runTF() {
     // Test the Model
     const predicted = Array.from(unX).map((val, i) => {
 
-        //find_array(inputs, label, val, unY[i]);
-
-        alert("XOriginal: " + inputs + "\nYOriginal: " + labels + "\nX: " + val + "\nY: " + unY[i] + "\ni: " + i);
-
         return {
             x: val,
             y: unY[i]
