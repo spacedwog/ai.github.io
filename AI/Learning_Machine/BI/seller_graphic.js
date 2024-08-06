@@ -59,7 +59,7 @@ async function runTF() {
 
         //find_array(inputs, label, val, unY[i]);
 
-        alert("X: " + val + "\nY: " + unY[i] + "\ni: " + i);
+        alert("XOriginal: " + inputs + "YOriginal: " + unY[i] + "X: " + val + "\nY: " + unY[i] + "\ni: " + i);
 
         return {
             x: val,
