@@ -13,6 +13,9 @@ async function runTF() {
     // Convert Input to Tensors
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
+    const veloci = values.map(obj => obj.kmL);
+
+    alert(veloci);
 
     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
     const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
