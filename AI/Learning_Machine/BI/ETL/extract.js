@@ -2,10 +2,11 @@
 function extractData(obj) {
     return {
         x: obj.Horsepower,
-        y: obj.Miles_per_Gallon
+        y: obj.Miles_per_Gallon,
+        kmL: obj.Miles_per_Gallon * 0.45
     };
 }
 
 function removeErrors(obj) {
-    return obj.x != null && obj.y != null;
+    return obj.x != null && obj.y != null && obj.kmL != null;
 }
