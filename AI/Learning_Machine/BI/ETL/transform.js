@@ -1,4 +1,4 @@
-// Extract Correct Data 
+// Transform Data 
 function transformData(obj) {
     return {
         x: 0 + ((0 + obj.Acceleration * 5) / 2),
