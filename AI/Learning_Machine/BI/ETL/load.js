@@ -12,6 +12,6 @@ function tfPlot(values, surface) {
 function plot_data(values) {
     // Plot the Data
     const surface1 = document.getElementById("plot1");
-    const surface2 = document.getElementById("plot2");
+    const surface2 = document.getElementById("plot3");
     tfPlot(values, surface1);
 }

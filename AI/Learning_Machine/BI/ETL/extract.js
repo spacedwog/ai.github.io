@@ -2,8 +2,7 @@
 function extractData(obj) {
     return {
         x: obj.Horsepower,
-        y: obj.Miles_per_Gallon,
-        Acceleration: obj.Acceleration
+        y: obj.Miles_per_Gallon
     };
 }
 
