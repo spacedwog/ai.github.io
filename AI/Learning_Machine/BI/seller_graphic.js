@@ -58,7 +58,7 @@ async function runTF() {
         return {
             x: val,
             y: unY[i],
-            Acceleration: "teste"
+            Acceleration: val
         }
     });
     tfPlot([values, predicted], surface1)
