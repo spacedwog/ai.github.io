@@ -1,6 +1,6 @@
 // Main Function
 async function runTF() {
-    const jsonData = await fetch("cardata.json");
+    const jsonData = await fetch("../../../../cardata.json");
     let values = await jsonData.json();
     values = values.map(extractData).filter(removeErrors);
 
