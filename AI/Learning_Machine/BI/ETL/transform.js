@@ -3,6 +3,6 @@ function find_array(eixoX, eixoY, predictedX, predictedY) {
     let second = eixoY.find(find_array);
 }
 
-function find_array(eixoX, eixoY, predictedX, predictedY, indexX, indexY, array) {
-    let first = eixoX.find(myFunction);
+function find_array(value, index, array) {
+
 }
