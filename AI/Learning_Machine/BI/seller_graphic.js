@@ -4,19 +4,19 @@ async function runTF() {
     let values = await jsonData.json();
     values = values.map(extractData).filter(removeErrors);
 
+    let values2 = await jsonData.json();
+    values2 = values2.map(transformData).filter(removeErrors);
+
     // Plot the Data
     const surface1 = document.getElementById("plot1");
     const surface2 = document.getElementById("plot2");
     const surface3 = document.getElementById("plot3");
     tfPlot(values, surface1);
+    tfPlot(values2, surface2);
 
     // Convert Input to Tensors
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
-    const veloci = labels * 0.425;
-
-    alert(veloci);
-
     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
     const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
     const inputMin = inputTensor.min();
