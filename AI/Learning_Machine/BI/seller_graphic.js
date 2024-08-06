@@ -45,8 +45,6 @@ async function runTF() {
     let unX = tf.linspace(0, 1, 100);
     let unY = model.predict(unX.reshape([100, 1]));
 
-    alert("X: " + unX + "\nY: " + unY);
-
     const unNormunX = unX
         .mul(inputMax.sub(inputMin))
         .add(inputMin);
@@ -58,6 +56,8 @@ async function runTF() {
 
     // Test the Model
     const predicted = Array.from(unX).map((val, i) => {
+
+        alert("X: " + val + "\nY: " + unY[i]);
         return {
             x: val,
             y: unY[i]
