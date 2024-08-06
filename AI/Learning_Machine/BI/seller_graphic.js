@@ -58,6 +58,7 @@ async function runTF() {
     const predicted = Array.from(unX).map((val, i) => {
 
         alert("X: " + val + "\nY: " + unY[i]);
+
         return {
             x: val,
             y: unY[i]
