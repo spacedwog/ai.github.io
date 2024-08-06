@@ -44,6 +44,9 @@ async function runTF() {
     // Un-Normalize Data
     let unX = tf.linspace(0, 1, 100);
     let unY = model.predict(unX.reshape([100, 1]));
+
+    alert("X: " + unX + "\nY: " + unY);
+
     const unNormunX = unX
         .mul(inputMax.sub(inputMin))
         .add(inputMin);
