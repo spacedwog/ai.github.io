@@ -119,7 +119,6 @@
         async function trainModel(model, inputs, labels, surface) {
             const batchSize = 25;
             const epochs = 50;
-            alert("Surface: " + surface);
             const callbacks = tfvis.show.fitCallbacks(surface, ['loss'], {
                 callbacks: ['onEpochEnd']
             })
