@@ -57,8 +57,7 @@ async function runTF() {
     const predicted = Array.from(unX).map((val, i) => {
         return {
             x: val,
-            y: unY[i],
-            Acceleration: val
+            y: unY[i]
         }
     });
     tfPlot([values, predicted], surface1)
