@@ -7,7 +7,6 @@ async function runTF() {
     // Plot the Data
     const surface1 = document.getElementById("plot1");
     const surface2 = document.getElementById("plot2");
-    const surface3 = document.getElementById("plot3");
     tfPlot(values, surface1);
 
     // Convert Input to Tensors
@@ -39,7 +38,7 @@ async function runTF() {
     });
 
     // Start Training
-    await trainModel(model, nmInputs, nmLabels, surface3);
+    await trainModel(model, nmInputs, nmLabels, surface2);
 
     // Un-Normalize Data
     let unX = tf.linspace(0, 1, 100);
