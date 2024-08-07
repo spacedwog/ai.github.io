@@ -17,7 +17,7 @@ function transformData(xArray, yArray) {
     let slope = (count * xySum - xSum * ySum) / (count * xxSum - xSum * xSum);
     let intercept = (ySum / count) - (slope * xSum) / count;
 
-    alert("Intercept: " + count.max());
+    alert("Intercept: " + count);
 
     // Generate values
     const xValues = [];
