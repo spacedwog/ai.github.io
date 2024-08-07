@@ -20,7 +20,7 @@ function transformData(xArray, yArray) {
     // Generate values
     const xValues = [];
     const yValues = [];
-    for (let x = 50; x <= 150; x += 1) {
+    for (let x = 50; x <= 240; x += 1) {
         xValues.push(x);
         yValues.push(x * slope + intercept);
     }
@@ -31,8 +31,8 @@ function transformData(xArray, yArray) {
     ];
 
     const layout = {
-        xaxis: { range: [40, 160], title: "Horsepower" },
-        yaxis: { range: [5, 16], title: "MPG" },
+        xaxis: { range: [0, 240], title: "Horsepower" },
+        yaxis: { range: [0, 50], title: "MPG" },
         title: "Horsepower VS Miles Per Gallon"
     };
 
