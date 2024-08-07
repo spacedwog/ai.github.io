@@ -31,7 +31,8 @@ function transformData(xArray, yArray) {
 
     const data = [
         { x: xArray, y: yArray, mode: "markers" },
-        { x: xValues, y: yValues, mode: "line" }
+        { x: xValues, y: yValues, mode: "line" },
+        { x: xValues, y: yValues, mode: "triangle" }
     ];
 
     const layout = {
