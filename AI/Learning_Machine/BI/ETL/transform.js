@@ -17,7 +17,9 @@ function transformData(xArray, yArray) {
     let slope = (count * xySum - xSum * ySum) / (count * xxSum - xSum * xSum);
     let intercept = (ySum / count) - (slope * xSum) / count;
 
-    alert("Total: " + count + "\nIntercept: " + intercept);
+    let incognita = (intercept * 100) / count;
+
+    alert("Total: " + count + "\nIntercept: " + intercept + "\nIncognita: " + incognita);
 
     // Generate values
     const xValues = [];
