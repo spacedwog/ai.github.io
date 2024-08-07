@@ -14,6 +14,8 @@ async function runTF() {
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
 
+    transform_data(inputs, labels);
+
     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
     const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
     const inputMin = inputTensor.min();
@@ -57,7 +59,6 @@ async function runTF() {
 
     // Test the Model
     const predicted = Array.from(unX).map((val, i) => {
-        transform_data(val, unY[i]);
         return {
             x: val,
             y: unY[i]
