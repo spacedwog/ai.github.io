@@ -36,5 +36,5 @@ function transformData(xArray, yArray) {
         title: "Horsepower VS Miles Per Gallon"
     };
 
-    Plotly.newPlot("Plot2", data, layout);
+    Plotly.newPlot("plot2", data, layout);
 }
