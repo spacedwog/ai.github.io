@@ -17,7 +17,7 @@ function transformData(xArray, yArray) {
     let slope = (count * xySum - xSum * ySum) / (count * xxSum - xSum * xSum);
     let intercept = (ySum / count) - (slope * xSum) / count;
 
-    let incognita = (intercept * 100) / count;
+    let porcentagem = (intercept * 100) / count;
 
     // Generate values
     const xValues = [];
@@ -30,7 +30,7 @@ function transformData(xArray, yArray) {
     const data = [
         { x: xArray, y: yArray, mode: "markers" },
         { x: xValues, y: yValues, mode: "line" },
-        { x: xValues, y: yValues, mode: "triangle" }
+        { x: xValues, y: porcentagem, mode: "triangle" }
     ];
 
     const layout = {
