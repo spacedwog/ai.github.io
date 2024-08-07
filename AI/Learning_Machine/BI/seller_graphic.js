@@ -13,8 +13,6 @@ async function runTF() {
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
 
-    alert("X: " + obj.x);
-
     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
     const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
     const inputMin = inputTensor.min();
