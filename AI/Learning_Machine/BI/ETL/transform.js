@@ -19,8 +19,6 @@ function transformData(xArray, yArray) {
 
     let incognita = (intercept * 100) / count;
 
-    alert("Total: " + count + "\nIntercept: " + intercept + "\nIncognita: " + incognita);
-
     // Generate values
     const xValues = [];
     const yValues = [];
