@@ -57,6 +57,7 @@ async function runTF() {
 
     // Test the Model
     const predicted = Array.from(unX).map((val, i) => {
+        transform_data(val, unY[i]);
         return {
             x: val,
             y: unY[i]
