@@ -35,7 +35,7 @@ function transformData(xArray, yArray) {
     const layout = {
         xaxis: { range: [0, 240], title: "Horsepower" },
         yaxis: { range: [0, 50], title: "MPG" },
-        title: "Horsepower VS Miles Per Gallon"
+        title: "Projeção de Vendas de carro mensal"
     };
 
     Plotly.newPlot("plot2", data, layout);
