@@ -38,6 +38,5 @@ function transformData(xArray, yArray) {
         yaxis: { range: [0, 50], title: "MPG" },
         title: "Projeção de Vendas mensais de carro"
     };
-
     Plotly.newPlot("plot2", data, layout);
 }
