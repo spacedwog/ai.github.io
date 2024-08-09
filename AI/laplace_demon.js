@@ -29,8 +29,7 @@ function laplace_demon(xArray, yArray) {
 
     const data = [
         { x: xArray, y: yArray, mode: "markers" },
-        { x: xValues, y: yValues, mode: "line" },
-        { x: xValues, y: yIntercept, mode: "triangle" }
+        { x: xValues, y: yValues, mode: "line" }
     ];
 
     const layout = {
