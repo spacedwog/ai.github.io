@@ -24,7 +24,7 @@ function laplace_demon(xArray, yArray) {
     // Generate values
     const xValues = [];
     const yValues = [];
-    for (let x = 50; x <= 240; x += 1) {
+    for (let x = -50; x <= 240; x += 1) {
         xValues.push(x);
         yValues.push(x * slope + intercept);
     }
@@ -36,8 +36,8 @@ function laplace_demon(xArray, yArray) {
     ];
 
     const layout = {
-        xaxis: { range: [0, 240], title: "Horsepower" },
-        yaxis: { range: [0, 50], title: "MPG" },
+        xaxis: { range: [-50, 240], title: "Horsepower" },
+        yaxis: { range: [-50, 50], title: "MPG" },
         title: "Laplace Demon(AI)"
     };
     Plotly.newPlot("plot4", data, layout);
