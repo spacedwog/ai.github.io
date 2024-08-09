@@ -1,6 +1,6 @@
 function laplace_demon(xArray, yArray) {
 
-    alert(xArray);
+    alert(yArray);
 
     // Calculate Sums
     let xSum = 0,
