@@ -43,12 +43,12 @@ function laplace_demon(xArray, yArray) {
 
 function getLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
-  }
-  
-  function showPosition(position) {
+}
+
+function showPosition(position) {
     laplace_demon(position.coords.latitude, position.coords.longitude);
-  }
+}
