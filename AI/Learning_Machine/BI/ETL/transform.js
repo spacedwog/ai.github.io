@@ -5,7 +5,9 @@ function transformData(xArray, yArray) {
         ySum = 0,
         xxSum = 0,
         xySum = 0;
+
     let count = xArray.length;
+
     for (let i = 0, len = count; i < count; i++) {
         xSum += xArray[i];
         ySum += yArray[i];
@@ -22,6 +24,7 @@ function transformData(xArray, yArray) {
     // Generate values
     const xValues = [];
     const yValues = [];
+
     for (let x = 50; x <= 240; x += 1) {
         xValues.push(x);
         yValues.push(x * slope + intercept);
