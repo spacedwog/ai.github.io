@@ -10,11 +10,11 @@ function showPosition(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    if (latitude == getLatitude() && longitude == getLongitude()) {
-        alert("Você está parado" + "\nLatitude: " + latitude + " longitude: " + longitude);
-    } else if (latitude > getLatitude() && longitude > getLongitude()) {
+    if (latitude == getLatitude() || longitude == getLongitude()) {
+        alert("Você está parado");
+    } else if (latitude > getLatitude() || longitude > getLongitude()) {
         alert("Você andou para frente");
-    } else if (latitude < getLatitude() && longitude < getLongitude()) {
+    } else if (latitude < getLatitude() || longitude < getLongitude()) {
         alert("Você andou para trás");
     }
     setLatitude(latitude);
