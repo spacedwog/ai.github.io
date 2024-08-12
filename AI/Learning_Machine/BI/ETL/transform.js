@@ -68,12 +68,6 @@ function converterPesoLibra_PesoQuilo(psl) {
     return pskg;
 }
 
-function deslocamento_total(cilindros, deslocamento) {
-    const desl_total = cilindros / deslocamento;
-
-    return desl_total;
-}
-
 function calculo_velocidade(hp, acel, kg) {
     const mg = kg * 1000;
     const forca_newton = mg * acel;
