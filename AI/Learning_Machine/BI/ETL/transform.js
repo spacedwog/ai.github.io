@@ -62,6 +62,8 @@ function converterGalao_Litro() {
     return litro;
 }
 
-function calcularVel_Media(km) {
-    const velmed = km;
+function converterPesoLibra_PesoQuilo(psl) {
+    const pskg = psl * 0.453592;
+
+    return pskg;
 }
