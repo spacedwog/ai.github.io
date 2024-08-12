@@ -40,3 +40,21 @@ function transformData(xArray, yArray) {
     };
     Plotly.newPlot("plot2", data, layout);
 }
+
+function converterMpg_kmL(mpg) {
+    const kmL = mpg * 0.425144;
+    return kmL;
+}
+
+function converterMilha_km(mpg) {
+    const milha = mpg * 20;
+    const km = milha * 1.60934;
+
+    return km;
+}
+
+function converterGalao_Litro() {
+    const litro = 20 * 3.78541;
+
+    return litro;
+}
