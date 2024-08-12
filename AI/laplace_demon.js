@@ -17,6 +17,8 @@ function showPosition(position) {
     } else if (latitude < getLatitude() && longitude < getLongitude()) {
         alert("Você andou para trás");
     }
+    setLatitude(latitude);
+    setLongitude(longitude);
 }
 
 //Encapsulamento
