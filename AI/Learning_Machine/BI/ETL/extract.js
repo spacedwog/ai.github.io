@@ -2,7 +2,6 @@
 function extractData(obj) {
 
     const kg = converterPesoLibra_PesoQuilo(obj.Weight_in_lbs);
-    const deslocamento_total = deslocamento_total(obj.Cylinders, obj.Displacement);
     const velocidade = calculo_velocidade(obj.Horsepower, obj.Acceleration, kg);
 
     return {
