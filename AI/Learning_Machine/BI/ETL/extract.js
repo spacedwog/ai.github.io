@@ -1,5 +1,6 @@
 // Extract Correct Data 
 function extractData(obj) {
+    const kmL = converterMpg_kmL(obj.Miles_per_Gallon);
     return {
         Name: obj.Name,
         x: obj.Horsepower,
