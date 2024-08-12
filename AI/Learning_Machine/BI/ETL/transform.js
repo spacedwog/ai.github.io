@@ -61,3 +61,7 @@ function converterGalao_Litro() {
 
     return litro;
 }
+
+function calcularVel_Media(km) {
+    const velmed = km;
+}
