@@ -10,7 +10,7 @@ function extractData(obj) {
         x: obj.Horsepower,
         y: obj.Miles_per_Gallon,
         Descricao: "O " + obj.Name + " é um carro fabricado no(a) " + obj.Origin + " em " + obj.Year +
-            " e percorre " + velocidade;
+            " e percorre " + velocidade
     };
 }
 
