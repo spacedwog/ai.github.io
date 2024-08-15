@@ -10,7 +10,7 @@ function showPosition(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    if (latitude == getLatitude() || longitude == getLongitude()) {
+    if (latitude == getLatitude() && longitude == getLongitude()) {
         alert("Você está parado");
     } else if (latitude == getLatitude() || longitude > getLongitude()) {
         alert("Você andou");
