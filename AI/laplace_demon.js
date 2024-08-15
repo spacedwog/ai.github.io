@@ -12,10 +12,18 @@ function showPosition(position) {
 
     if (latitude == getLatitude() || longitude == getLongitude()) {
         alert("Você está parado");
+    } else if (latitude == getLatitude() || longitude > getLongitude()) {
+        alert("Você andou");
+    } else if (latitude > getLatitude() || longitude == getLongitude()) {
+        alert("Você voltou");
     } else if (latitude > getLatitude() || longitude > getLongitude()) {
         alert("Você andou para frente");
+    } else if (latitude > getLatitude() || longitude < getLongitude()) {
+        alert("Você andou para frente2");
     } else if (latitude < getLatitude() || longitude < getLongitude()) {
         alert("Você andou para trás");
+    } else if (latitude < getLatitude() || longitude > getLongitude()) {
+        alert("Você andou para trás2");
     }
     setLatitude(latitude);
     setLongitude(longitude);
