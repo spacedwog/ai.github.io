@@ -14,8 +14,8 @@ function showPosition(position) {
         alert("Você está parado");
     } else if (latitude > getLatitude() && longitude > getLongitude()) {
         alert("Você andou para frente");
-    } else if (latitude < getLatitude() && longitude > getLongitude()) {
-        alert("Você andou para trás2");
+    } else if (latitude < getLatitude() && longitude < getLongitude()) {
+        alert("Você andou para trás");
     }
     setLatitude(latitude);
     setLongitude(longitude);
