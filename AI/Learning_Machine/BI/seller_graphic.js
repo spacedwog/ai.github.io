@@ -66,7 +66,8 @@ async function runTF() {
         let x = inputs.find(xValue);
         let y = labels.find(yValue);
 
-        alert("x: " + x + "\ny: " + y);
+        alert("x: " + val + "\ny: " + unY[i]);
+        alert("xFind: " + x + "\nyFind: " + y);
         return {
             x: val,
             y: unY[i]
