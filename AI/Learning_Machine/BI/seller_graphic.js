@@ -96,9 +96,9 @@ function setyValue(y) {
 }
 //GET
 function getxValue() {
-    localStorage.getItem("xPredicted");
+    return localStorage.getItem("xPredicted");
 }
 
 function getyValue() {
-    localStorage.getItem("yPredicted");
+    return localStorage.getItem("yPredicted");
 }
