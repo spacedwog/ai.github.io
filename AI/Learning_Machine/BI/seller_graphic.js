@@ -15,11 +15,6 @@ async function runTF() {
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
 
-    let x = inputs.find(xValue);
-    let y = labels.find(yValue);
-
-    alert("x: " + x + "\ny: " + y);
-
     transformData(inputs, labels);
 
     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
@@ -72,7 +67,12 @@ async function runTF() {
             y: unY[i]
         }
     });
-    tfPlot([values, predicted], surface1)
+    tfPlot([values, predicted], surface1);
+
+    let x = inputs.find(xValue);
+    let y = labels.find(yValue);
+
+    alert("x: " + x + "\ny: " + y);
 
     // End Main Function
 }
