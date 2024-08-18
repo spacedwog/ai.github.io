@@ -15,7 +15,10 @@ async function runTF() {
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
 
-    alert("Inputs: " + inputs);
+    let x = inputs.find(xValue);
+    let y = labels.find(yValue);
+
+    alert("x: " + x + "\ny: " + y);
 
     transformData(inputs, labels);
 
@@ -70,4 +73,30 @@ async function runTF() {
     tfPlot([values, predicted], surface1)
 
     // End Main Function
+}
+
+function xValue(value, index, array) {
+    return value > getxValue();
+}
+
+function yValue(value, index, array) {
+    return value > getyValue();
+}
+
+//Encapsulamento
+//SET
+function setxValue(x) {
+    localStorage.setItem("xPredicted", x);
+}
+
+function setyValue(y) {
+    localStorage.setItem("yPredicted", y);
+}
+//GET
+function getxValue() {
+    localStorage.getItem("xPredicted");
+}
+
+function getyValue() {
+    localStorage.getItem("yPredicted");
 }
