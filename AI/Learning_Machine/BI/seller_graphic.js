@@ -65,6 +65,7 @@ async function runTF() {
 
         let xPosition = inputs.indexOf(inputs.find(xValue)) + 1;
         let yPosition = labels.indexOf(labels.find(yValue)) + 1;
+
         let x = inputs.find(xValue, xPosition);
         let y = labels.find(yValue, yPosition);
 
