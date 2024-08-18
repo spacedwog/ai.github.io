@@ -15,6 +15,8 @@ async function runTF() {
     const inputs = values.map(obj => obj.x);
     const labels = values.map(obj => obj.y);
 
+    alert("Inputs: " + inputs);
+
     transformData(inputs, labels);
 
     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
