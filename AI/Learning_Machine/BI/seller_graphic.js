@@ -62,17 +62,17 @@ async function runTF() {
     const predicted = Array.from(unX).map((val, i) => {
         setxValue(val);
         setyValue(unY[i]);
+
+        let x = inputs.find(xValue);
+        let y = labels.find(yValue);
+
+        alert("x: " + x + "\ny: " + y);
         return {
             x: val,
             y: unY[i]
         }
     });
     tfPlot([values, predicted], surface1);
-
-    let x = inputs.find(xValue);
-    let y = labels.find(yValue);
-
-    alert("x: " + x + "\ny: " + y);
 
     // End Main Function
 }
