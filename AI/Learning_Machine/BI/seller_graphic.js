@@ -71,7 +71,6 @@ async function runTF() {
 
         const previsao_vendas = ["" + x + ", " + y];
 
-        alert("Previsão de Vendas: " + previsao_vendas);
         return {
             x: val,
             y: unY[i]
