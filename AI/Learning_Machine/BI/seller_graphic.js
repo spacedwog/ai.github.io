@@ -60,14 +60,14 @@ async function runTF() {
 
     // Test the Model
     const predicted = Array.from(unX).map((val, i) => {
+
         setxValue(val);
         setyValue(unY[i]);
 
         let xPosition = inputs.indexOf(inputs.find(xValue)) + 1;
-        let yPosition = labels.indexOf(labels.find(yValue)) + 1;
 
         let x = inputs.find(xValue, xPosition);
-        let y = labels.find(yValue, yPosition);
+        let y = labels.find(yValue, xPosition);
 
         const previsao_vendas = {
             horsepower: x,
