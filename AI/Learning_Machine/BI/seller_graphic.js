@@ -76,7 +76,7 @@ async function runTF() {
             mpg: y
         };
 
-        alert("Previsão de Vendas:\n" + previsao_vendas.horsepower + "\n" + previsao_vendas.mpg);
+        alert("Previsão de Vendas:\nInput Tensor: " + previsao_vendas.horsepower + "\nLabel Tensor: " + previsao_vendas.mpg);
 
         return {
             x: val,
