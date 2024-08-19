@@ -45,7 +45,7 @@ async function runTF() {
     // Start Training
     await trainModel(model, nmInputs, nmLabels, surface3);
 
-    alert("Teste de Array:\n" + inputMin + "\n" + labelMin);
+    alert("Teste de Array:\n" + inputTensor + "\n" + labelTensor);
 
     // Un-Normalize Data
     let unX = tf.linspace(0, 1, 100);
