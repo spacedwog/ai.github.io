@@ -66,10 +66,10 @@ async function runTF() {
         setxValue(val);
         setyValue(unY[i]);
 
-        let xPosition = inputs.indexOf(inputs.find(xValue)) + 1;
+        let xPosition = inputTensor.indexOf(inputTensor.find(xValue)) + 1;
 
-        let x = inputs.find(xValue, xPosition);
-        let y = labels.find(yValue, xPosition);
+        let x = inputTensor.find(xValue, xPosition);
+        let y = labelTensor.find(yValue, xPosition);
 
         const previsao_vendas = {
             horsepower: x,
