@@ -61,19 +61,6 @@ async function runTF() {
     // Test the Model
     const predicted = Array.from(unX).map((val, i) => {
 
-        setxValue(val);
-        setyValue(unY[i]);
-
-        let xPosition = inputs.indexOf(inputs.find(xValue)) + 1;
-
-        let x = inputs.find(xValue, xPosition);
-        let y = labels.find(yValue, xPosition);
-
-        const previsao_vendas = {
-            horsepower: x,
-            mpg: y
-        };
-
         return {
             x: val,
             y: unY[i]
@@ -82,30 +69,4 @@ async function runTF() {
     tfPlot([values, predicted], surface1);
 
     // End Main Function
-}
-
-function xValue(value, index, array) {
-    return value > getxValue();
-}
-
-function yValue(value, index, array) {
-    return value > getyValue();
-}
-
-//Encapsulamento
-//SET
-function setxValue(x) {
-    localStorage.setItem("xPredicted", x);
-}
-
-function setyValue(y) {
-    localStorage.setItem("yPredicted", y);
-}
-//GET
-function getxValue() {
-    return localStorage.getItem("xPredicted");
-}
-
-function getyValue() {
-    return localStorage.getItem("yPredicted");
 }
