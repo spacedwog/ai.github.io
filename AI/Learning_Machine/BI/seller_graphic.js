@@ -69,8 +69,8 @@ async function runTF() {
         let x = inputs.find(xValue, xPosition);
         let y = labels.find(yValue, yPosition);
 
-        const previsao_vendas = [];
-        previsao_vendas.includes("" + x + "," + y);
+        const previsao_vendas = ["" + x + ", " + y];
+        previsao_vendas.includes("" + x + ", " + y);
 
         alert("Previsão de Vendas: " + previsao_vendas);
         return {
