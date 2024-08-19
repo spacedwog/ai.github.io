@@ -45,8 +45,6 @@ async function runTF() {
     // Start Training
     await trainModel(model, nmInputs, nmLabels, surface3);
 
-    alert("Teste de Array:\n" + inputTensor + "\n" + labelTensor);
-
     // Un-Normalize Data
     let unX = tf.linspace(0, 1, 100);
     let unY = model.predict(unX.reshape([100, 1]));
@@ -66,17 +64,15 @@ async function runTF() {
         setxValue(val);
         setyValue(unY[i]);
 
-        let xPosition = inputTensor.indexOf(inputTensor.find(xValue)) + 1;
+        let xPosition = inputs.indexOf(inputs.find(xValue)) + 1;
 
-        let x = inputTensor.find(xValue, xPosition);
-        let y = labelTensor.find(yValue, xPosition);
+        let x = inputs.find(xValue, xPosition);
+        let y = labels.find(yValue, xPosition);
 
         const previsao_vendas = {
             horsepower: x,
             mpg: y
         };
-
-        alert("Previsão de Vendas:\nInput Tensor: " + previsao_vendas.horsepower + "\nLabel Tensor: " + previsao_vendas.mpg);
 
         return {
             x: val,
