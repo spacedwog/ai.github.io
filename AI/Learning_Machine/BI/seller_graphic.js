@@ -74,7 +74,7 @@ async function runTF() {
             mpg: y
         };
 
-        alert("Previsão de Vendas: " + previsao_vendas);
+        alert("Previsão de Vendas:\n" + previsao_vendas.horsepower + "\n" + previsao_vendas.mpg);
 
         return {
             x: val,
