@@ -70,18 +70,9 @@ async function runTF() {
         let y = labels.find(yValue, xPosition);
 
         const previsao_vendas = {
-            nome: obj.Name,
             horsepower: x,
-            mpg: y,
-            descricao: obj.Descricao
+            mpg: y
         };
-
-        alert("Previsão de Vendas:\n" +
-            previsao_vendas.nome + "\n" +
-            previsao_vendas.horsepower + "\n" +
-            previsao_vendas.mpg + "\n" +
-            previsao_vendas.descricao
-        );
 
         return {
             x: val,
