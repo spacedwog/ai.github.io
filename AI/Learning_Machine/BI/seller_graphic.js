@@ -77,6 +77,7 @@ async function runTF() {
         };
 
         alert("Previsão de Vendas:\n" +
+            previsao_vendas.nome + "\n" +
             previsao_vendas.horsepower + "\n" +
             previsao_vendas.mpg + "\n" +
             previsao_vendas.descricao
