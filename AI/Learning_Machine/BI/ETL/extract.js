@@ -21,4 +21,5 @@ function removeErrors(obj) {
 function car_count() {
     const count = localStorage.getItem("contador");
     localStorage.setItem("contador", ++count);
+    alert(localStorage.getItem("contador"));
 }
