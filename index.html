@@ -321,6 +321,35 @@
             mySidebar.style.display = "none";
             overlayBg.style.display = "none";
         }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            setPosition("latitude", latitude);
+            setPosition("longitude", longitude);
+
+            if (latitude > getPosition("latitude") && longitude > getPosition("longitude")) {
+                alert("Você andou");
+            }
+        }
+
+        //Encapsulamento
+        function setPosition(name, position) {
+            localStorage.setItem(name.toString, position);
+        }
+
+        function getPosition(name) {
+            localStorage.getItem(name.toString);
+        }
     </script>
 
 </body>
