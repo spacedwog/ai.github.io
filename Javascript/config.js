@@ -1,3 +1,3 @@
 function config() {
-    var myWindow = window.open("", "", "width=200,height=100");
+    var myWindow = window.open("Configurações", "", "width=200,height=100");
 }
