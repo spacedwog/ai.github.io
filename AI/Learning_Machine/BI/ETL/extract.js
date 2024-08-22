@@ -16,3 +16,8 @@ function extractData(obj) {
 function removeErrors(obj) {
     return obj.x != null && obj.y != null;
 }
+
+function car_count() {
+    const count = localStorage.getItem("contador");
+    localStorage.setItem("contador", ++count);
+}
