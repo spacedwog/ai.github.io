@@ -1,7 +1,3 @@
-$(document).ready(function() {
-    $("a").click(function() {
-        $.get("index.html", function(data, status) {
-            alert("Data: " + data + "\nStatus: " + status);
-        });
-    });
-});
+function config() {
+    var myWindow = window.open("", "", "width=200,height=100");
+}
