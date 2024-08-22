@@ -3,6 +3,7 @@ function extractData(obj) {
 
     const kg = converterPesoLibra_PesoQuilo(obj.Weight_in_lbs);
     const velocidade = calculo_velocidade(obj.Horsepower, obj.Acceleration, kg);
+    car_count();
 
     return {
         Name: obj.Name,
