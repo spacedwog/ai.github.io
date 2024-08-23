@@ -340,11 +340,13 @@
 
         function laplace_demon(latitude, longitude) {
 
-            const mensagem = "Posição Invalida\n" +
+            const mensagem = "";
+            const mensagem1 = "Posição Invalida\n" +
                 "Latitude: " + latitude + "\n" +
                 "Longitude: " + longitude + "\n" +
                 "GetLatitude(latitude): " + getPosition("latitude") + "\n" +
                 "GetPosition(longitude): " + getPosition("longitude");
+            alert(mensagem1);
 
             if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
                 mensagem = "Você está parado.";
