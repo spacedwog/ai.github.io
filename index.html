@@ -342,7 +342,9 @@
 
             const mensagem = "Posição Invalida\n" +
                 "Latitude: " + latitude + "\n" +
-                "Longitude: " + longitude;
+                "Longitude: " + longitude +
+                "GetPosition(latitude): " + getPosition("latitude") + "\n" +
+                "GetPosition(longitude): " + getPosition("longitude");
 
             if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
                 mensagem = "Você está parado.";
