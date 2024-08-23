@@ -337,9 +337,21 @@
             setPosition("latitude", latitude);
             setPosition("longitude", longitude);
 
-            if (latitude > getPosition("latitude") && longitude > getPosition("longitude")) {
-                alert("Você andou");
+            const mensagem = "";
+
+            if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
+                mensagem = "Você está parado.";
+                if (latitude > getPosition("latitude")) {
+                    mensagem = "Você andou para frente.";
+                } else if (latitude < getPosition("latitude")) {
+                    mensagem = "Você andou para trás.";
+                } else if (longitude > getPosition("longitude")) {
+                    mensagem = "Você pulou.";
+                } else if (longitude < getPosition("longitude")) {
+                    mensagem = "Você caiu.";
+                }
             }
+            alert(mensagem);
         }
 
         //Encapsulamento
