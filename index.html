@@ -340,16 +340,43 @@
 
         function laplace_demon(latitude, longitude) {
 
-            const mensagem = "";
-            const mensagem1 = "Posição Invalida\n" +
-                "Latitude: " + latitude + "\n" +
-                "Longitude: " + longitude + "\n" +
-                "GetLatitude(latitude): " + getPosition("latitude") + "\n" +
-                "GetPosition(longitude): " + getPosition("longitude");
-            alert(mensagem1);
+            const mensagem = "teste";
 
             if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
                 mensagem = "Você está parado.";
+                if (latitude > getPosition("latitude")) {
+                    mensagem = "Você andou para frente.";
+                } else if (latitude < getPosition("latitude")) {
+                    mensagem = "Você andou para trás.";
+                } else if (longitude > getPosition("longitude")) {
+                    mensagem = "Você pulou.";
+                } else if (longitude < getPosition("longitude")) {
+                    mensagem = "Você caiu.";
+                }
+            } else if (latitude != getPosition("latitude") || longitude == getPosition("longitude")) {
+                mensagem = "Você andou";
+                if (latitude > getPosition("latitude")) {
+                    mensagem = "Você andou para frente.";
+                } else if (latitude < getPosition("latitude")) {
+                    mensagem = "Você andou para trás.";
+                } else if (longitude > getPosition("longitude")) {
+                    mensagem = "Você pulou.";
+                } else if (longitude < getPosition("longitude")) {
+                    mensagem = "Você caiu.";
+                }
+            } else if (latitude == getPosition("latitude") || longitude != getPosition("longitude")) {
+                mensagem = "Você pulou.";
+                if (latitude > getPosition("latitude")) {
+                    mensagem = "Você andou para frente.";
+                } else if (latitude < getPosition("latitude")) {
+                    mensagem = "Você andou para trás.";
+                } else if (longitude > getPosition("longitude")) {
+                    mensagem = "Você pulou.";
+                } else if (longitude < getPosition("longitude")) {
+                    mensagem = "Você caiu.";
+                }
+            } else if (latitude != getPosition("latitude") || longitude != getPosition("longitude")) {
+                mensagem = "Você andou.";
                 if (latitude > getPosition("latitude")) {
                     mensagem = "Você andou para frente.";
                 } else if (latitude < getPosition("latitude")) {
