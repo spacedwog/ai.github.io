@@ -331,8 +331,8 @@
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            setPosition("latitude", latitude);
-            setPosition("longitude", longitude);
+            localStorage.setItem("latitude", latitude);
+            localStorage.setItem("longitude", longitude);
 
             laplace_demon(latitude, longitude);
 
@@ -343,7 +343,7 @@
             const mensagem = "Posição Invalida\n" +
                 "Latitude: " + latitude + "\n" +
                 "Longitude: " + longitude + "\n" +
-                "GetPosition(latitude): " + getPosition("latitude") + "\n" +
+                "GetLatitude(latitude): " + getPosition("latitude") + "\n" +
                 "GetPosition(longitude): " + getPosition("longitude");
 
             if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
@@ -367,7 +367,7 @@
         }
 
         function getPosition(name) {
-            localStorage.getItem(name.toString());
+            return localStorage.getItem(name.toString());
         }
     </script>
 
