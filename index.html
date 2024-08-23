@@ -337,6 +337,12 @@
             setPosition("latitude", latitude);
             setPosition("longitude", longitude);
 
+            laplace_demon(latitude, longitude);
+
+        }
+
+        function laplace_demon(latitude, longitude) {
+
             const mensagem = "";
 
             if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
@@ -351,7 +357,7 @@
                     mensagem = "Você caiu.";
                 }
             }
-            alert(mensragem);
+            alert(mensagem);
         }
 
         //Encapsulamento
