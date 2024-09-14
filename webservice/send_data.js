@@ -15,7 +15,6 @@ async function usuario() {
     const newUser = {
         id: ipAddress
     }
-    setIpAddress(ipAddress);
     send_usuarioData(ipAddress);
 }
 
@@ -31,7 +30,7 @@ async function send_usuarioData(ipAddress) {
 
     // Modify the JavaScript object by adding new data
     jsonData.users.push({
-        name: getIpAddress()
+        name: ipAddress
     });
 
 
@@ -45,14 +44,4 @@ async function send_usuarioData(ipAddress) {
 
     const update_data = fs.readFileSync('../usuario.json');
     const updated_jsonData = JSON.parse(update_data);
-}
-
-//Encapsulamento
-//GET
-function getIpAddress() {
-    return localStorage.getItem("ipAddress");
-}
-//SET
-function setIpAddress(ipAddress) {
-    localStorage.setItem("ipAddress", ipAddress);
 }
