@@ -4,13 +4,13 @@ async function usuario() {
         .then(response => response.json())
         .then(data => {
             ipAddress = data.ip;
-            nome = data.name;
-            alert(ipAddress + "\n" + nome);
+            alert(ipAddress);
             console.log(data.ip);
         })
         .catch(error => {
             console.log('Error:', error);
         });
+    setIpAddress(ipAddress);
     const newUser = {
         id: ipAddress
     }
