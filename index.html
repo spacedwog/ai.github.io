@@ -42,7 +42,7 @@
     </style>
 </head>
 
-<body class="w3-light-grey" onfocus="getLocation()">
+<body class="w3-light-grey">
 
     <!-- Top container -->
     <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
@@ -317,86 +317,6 @@
         function w3_close() {
             mySidebar.style.display = "none";
             overlayBg.style.display = "none";
-        }
-
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
-
-        function showPosition(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-
-            localStorage.setItem("latitude", latitude);
-            localStorage.setItem("longitude", longitude);
-
-            laplace_demon(latitude, longitude);
-
-        }
-
-        function laplace_demon(latitude, longitude) {
-
-            let mensagem = "";
-
-            if (latitude == getPosition("latitude") || longitude == getPosition("longitude")) {
-                mensagem = "Você está parado.";
-                if (latitude > getPosition("latitude")) {
-                    mensagem = "Você andou para frente.";
-                } else if (latitude < getPosition("latitude")) {
-                    mensagem = "Você andou para trás.";
-                } else if (longitude > getPosition("longitude")) {
-                    mensagem = "Você pulou.";
-                } else if (longitude < getPosition("longitude")) {
-                    mensagem = "Você caiu.";
-                }
-            } else if (latitude != getPosition("latitude") || longitude == getPosition("longitude")) {
-                mensagem = "Você andou1.";
-                if (latitude > getPosition("latitude")) {
-                    mensagem = "Você andou para frente.";
-                } else if (latitude < getPosition("latitude")) {
-                    mensagem = "Você andou para trás.";
-                } else if (longitude > getPosition("longitude")) {
-                    mensagem = "Você pulou.";
-                } else if (longitude < getPosition("longitude")) {
-                    mensagem = "Você caiu.";
-                }
-            } else if (latitude == getPosition("latitude") || longitude != getPosition("longitude")) {
-                mensagem = "Você pulou.";
-                if (latitude > getPosition("latitude")) {
-                    mensagem = "Você andou para frente.";
-                } else if (latitude < getPosition("latitude")) {
-                    mensagem = "Você andou para trás.";
-                } else if (longitude > getPosition("longitude")) {
-                    mensagem = "Você pulou.";
-                } else if (longitude < getPosition("longitude")) {
-                    mensagem = "Você caiu.";
-                }
-            } else if (latitude != getPosition("latitude") || longitude != getPosition("longitude")) {
-                mensagem = "Você andou2.";
-                if (latitude > getPosition("latitude")) {
-                    mensagem = "Você andou para frente.";
-                } else if (latitude < getPosition("latitude")) {
-                    mensagem = "Você andou para trás.";
-                } else if (longitude > getPosition("longitude")) {
-                    mensagem = "Você pulou.";
-                } else if (longitude < getPosition("longitude")) {
-                    mensagem = "Você caiu.";
-                }
-            }
-            console.log(mensagem);
-        }
-
-        //Encapsulamento
-        function setPosition(name, position) {
-            localStorage.setItem(name.toString(), position);
-        }
-
-        function getPosition(name) {
-            return localStorage.getItem(name.toString());
         }
     </script>
 
