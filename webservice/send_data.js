@@ -4,7 +4,8 @@ async function usuario() {
         .then(response => response.json())
         .then(data => {
             ipAddress = data.ip;
-            alert("New User Id: " + ipAddress);
+            setIpAddress(ipAddress);
+            alert("New User Id: " + getIpAddress());
             console.log(data.ip);
         })
         .catch(error => {
@@ -13,4 +14,12 @@ async function usuario() {
     const newUser = {
         id: ipAddress
     }
+}
+
+function getIpAddress() {
+    return localStorage.getItem("ipAddress");
+}
+
+function setIpAddress(ip) {
+    localStorage.setItem("ipAddress", ip);
 }
