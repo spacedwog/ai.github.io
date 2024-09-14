@@ -19,7 +19,7 @@ async function usuario() {
 //Encapsulamento
 //GET
 function getIpAddress() {
-    localStorage.getItem("ipAddress");
+    return localStorage.getItem("ipAddress");
 }
 //SET
 function setIpAddress(ipAddress) {
