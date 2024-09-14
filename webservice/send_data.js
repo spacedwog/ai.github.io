@@ -22,7 +22,7 @@ async function send_usuarioData(ipAddress) {
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
         },
-        body: JSON.stringify(newProduct)
+        body: JSON.stringify(usuario)
     })
 
     console.log('status:', response.status)
