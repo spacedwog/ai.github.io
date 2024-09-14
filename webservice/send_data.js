@@ -10,10 +10,11 @@ async function usuario() {
         .catch(error => {
             console.log('Error:', error);
         });
-    setIpAddress(ipAddress);
     const newUser = {
         id: ipAddress
     }
+    setIpAddress(ipAddress);
+    send_usuarioData(ipAddress);
 }
 
 async function send_usuarioData(ipAddress) {
