@@ -24,7 +24,7 @@ async function send_usuarioData(ipAddress) {
         },
         body: JSON.stringify(usuario)
     })
-
+    alert("status: " + response.status);
     console.log('status:', response.status)
 
 }
