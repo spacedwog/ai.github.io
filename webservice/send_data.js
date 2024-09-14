@@ -4,7 +4,6 @@ async function usuario() {
         .then(response => response.json())
         .then(data => {
             ipAddress = data.ip;
-            alert(ipAddress);
             console.log(data.ip);
         })
         .catch(error => {
