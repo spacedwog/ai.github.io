@@ -1,3 +1,5 @@
+const { json } = require("stream/consumers");
+
 async function usuario() {
     let ipAddress;
     fetch('https://api.ipify.org?format=json')
@@ -18,16 +20,31 @@ async function usuario() {
 }
 
 async function send_usuarioData(ipAddress) {
-    const response = await fetch('../usuario.json', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify(usuario)
-    })
-    alert("status: " + response.status);
-    console.log('status:', response.status)
+    const fs = require('fs');
 
+    // Read the contents of the JSON file
+    const data = fs.readFileSync('../usuario.json');
+    // Parse the JSON data into a JavaScript object
+    const jsonData = JSON.parse(data);
+
+    console.log("Before Adding data", JSON.stringify(jsonData, null, 4));
+
+    // Modify the JavaScript object by adding new data
+    jsonData.users.push({
+        name: getIpAddress()
+    });
+
+
+    // Convert the JavaScript object back into a JSON string
+    const jsonString = JSON.stringify(jsonData);
+
+    fs.writeFileSync('../usuario.json', jsonString, 'utf-8', (err) => {
+        if (err) throw err;
+        console.log('Data added to file');
+    });
+
+    const update_data = fs.readFileSync('../usuario.json');
+    const updated_jsonData = JSON.parse(update_data);
 }
 
 //Encapsulamento
