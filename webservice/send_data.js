@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+
 async function usuario() {
     let ipAddress;
     fetch('https://api.ipify.org?format=json')
@@ -17,7 +19,6 @@ async function usuario() {
 }
 
 async function send_usuarioData(ipAddress) {
-    import fs from 'fs';
 
     // Read the contents of the JSON file
     const data = fs.readFileSync('../usuario.json');
