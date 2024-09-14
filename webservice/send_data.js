@@ -18,7 +18,7 @@ async function usuario() {
 }
 
 async function send_usuarioData(ipAddress) {
-    const response = await fetch('../usuario.json', {
+    const response = await fetch('../usuario.json?IpAddress=', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
