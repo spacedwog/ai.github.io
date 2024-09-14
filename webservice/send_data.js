@@ -1,4 +1,4 @@
-import * as fs from './fs';
+import * as fs from 'node:fs';
 
 async function usuario() {
     let ipAddress;
