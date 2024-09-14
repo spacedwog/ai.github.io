@@ -1,5 +1,3 @@
-import { json } from "stream/consumers";
-
 async function usuario() {
     let ipAddress;
     fetch('https://api.ipify.org?format=json')
