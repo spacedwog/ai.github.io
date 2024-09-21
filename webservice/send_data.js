@@ -6,7 +6,7 @@ async function usuario() {
         .then(data => {
             ipAddress = data.ip;
             setIpAddress(ipAddress);
-            alert("Novo Usuário: " + getIpAddress());
+            alert("Novo Usuário(a): " + getIpAddress());
             ipAddress += "<p id='" + ipAddress + "'>" + "</p>";
             console.log(data.ip);
         })
