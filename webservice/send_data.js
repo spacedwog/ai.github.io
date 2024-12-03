@@ -1,6 +1,5 @@
 async function usuario() {
     let ipAddress;
-    const ipaddresshtml = document.getElementById('ipaddress').innerHTML;
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
@@ -13,9 +12,6 @@ async function usuario() {
         .catch(error => {
             console.log('Error:', error);
         });
-    const newUser = {
-        id: ipAddress
-    }
 }
 
 function getIpAddress() {
