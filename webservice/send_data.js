@@ -19,6 +19,7 @@ async function usuario() {
                                                                     "</li>";
             };
             xmlhttp.open("POST", "usuario.txt");
+            alert("Abrindo arquivo");
             xmlhttp.send();
         })
         .catch(error => {
