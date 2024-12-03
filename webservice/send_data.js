@@ -9,6 +9,13 @@ async function usuario() {
             alert("Novo Usuário(a): " + getIpAddress());
             ipAddress += "<p id='" + ipAddress + "'>" + "</p>";
             console.log(data.ip);
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+                const myObj = JSON.parse(ipAddress);
+                document.getElementById("demo").innerHTML = myObj.name;
+            };
+            xmlhttp.open("POST", "usuario.json");
+            xmlhttp.send();
         })
         .catch(error => {
             console.log('Error:', error);
