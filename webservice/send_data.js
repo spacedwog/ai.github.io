@@ -15,7 +15,7 @@ async function usuario() {
 }
 
 function getIpAddress() {
-    return localStorage.getItem("ipAddress");
+    localStorage.getItem("ipAddress");
 }
 
 function setIpAddress(ip) {
