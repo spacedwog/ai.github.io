@@ -5,9 +5,10 @@ async function usuario() {
         .then(data => {
             ipAddress = data.ip;
             setIpAddress(ipAddress);
-            alert("Novo Usuário(a): " + getIpAddress());
+            let ip = getIpAddress();
+            alert("Novo Usuário(a): " + ip);
             ipAddress += "<p id='" + ipAddress + "'>" + "</p>";
-            console.log(getIpAddress());
+            console.log(ip);
         })
         .catch(error => {
             console.log('Error:', error);
