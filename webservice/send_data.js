@@ -11,13 +11,14 @@ async function usuario() {
             console.log(data.ip);
             const xmlhttp = new XMLHttpRequest();
             xmlhttp.onload = function() {
-                //const myObj = JSON.parse(data.ip);
+                const myObj = JSON.parse(getIpAddress());
+                const myJson = JSON.stringify(myObj);
                 document.getElementById("ul_usuarios").innerHTML = "</br><li class='w3-padding-16'>" +   
                                                                         "<img src='https://www.w3schools.com/w3images/avatar6.png' class='w3-left w3-circle w3-margin-right' style='width:35px'>" +
                                                                         "<span class='w3-xlarge'>" + getIpAddress() + "</span><br></br>"
                                                                     "</li>";
             };
-            xmlhttp.open("POST", "usuario.json");
+            xmlhttp.open("POST", "usuario.txt");
             xmlhttp.send();
         })
         .catch(error => {
