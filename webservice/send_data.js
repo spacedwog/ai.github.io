@@ -21,6 +21,7 @@ async function usuario() {
             xmlhttp.open("GET", "usuario.txt");
             alert("Abrindo arquivo");
             xmlhttp.send();
+            alert("Dados Enviados");
         })
         .catch(error => {
             console.log('Error:', error);
