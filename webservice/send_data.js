@@ -4,6 +4,8 @@ async function usuario() {
         .then(response => response.json())
         .then(data => {
             ipAddress = data.ip;
+            let teste = CharacterData.name();
+            alert(teste);
             setIpAddress(ipAddress);
             alert("Novo Usuário(a): " + getIpAddress());
             ipAddress += "<p id='" + ipAddress + "'>" + "</p>";
