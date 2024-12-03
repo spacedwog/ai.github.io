@@ -14,7 +14,7 @@ async function usuario() {
             xmlhttp.onload = function() {
                 alert("xmlhttp: " + getIpAddress());
                 //const myObj = JSON.parse(getIpAddress());
-                document.getElementById("ul_usuarios").innerHTML = "<li class='w3-padding-16'>" +   
+                document.getElementById("ul_usuarios").innerHTML = "</br><li class='w3-padding-16'>" +   
                                                                         "<img src='https://www.w3schools.com/w3images/avatar6.png' class='w3-left w3-circle w3-margin-right' style='width:35px'>" +
                                                                         "<span class='w3-xlarge'>" + getIpAddress() + "</span><br></br>"
                                                                     "</li>";
