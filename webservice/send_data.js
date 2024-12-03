@@ -10,6 +10,7 @@ async function usuario() {
             ipAddress += "<p id='" + ipAddress + "'>" + "</p>";
             console.log(data.ip);
             const xmlhttp = new XMLHttpRequest();
+            alert("Requesito html");
             xmlhttp.onload = function() {
                 const myObj = JSON.parse(ipAddress);
                 document.getElementById("ul_usuarios").innerHTML = "<li class='w3-padding-16'>" +   
