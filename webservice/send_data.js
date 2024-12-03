@@ -17,7 +17,7 @@ async function usuario() {
                                                                         "<span class='w3-xlarge'>" + getIpAddress() + "</span><br></br>"
                                                                     "</li>";
             };
-            xmlhttp.open("GET", "usuario.json");
+            xmlhttp.open("POST", "usuario.json");
             xmlhttp.send();
         })
         .catch(error => {
