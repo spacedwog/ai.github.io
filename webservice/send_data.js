@@ -12,7 +12,9 @@ async function usuario() {
             const xmlhttp = new XMLHttpRequest();
             xmlhttp.onload = function() {
                 const myObj = JSON.parse(ipAddress);
-                document.getElementById("demo").innerHTML = myObj.name;
+                document.getElementById("ul_usuarios").innerHTML = "<li class='w3-padding-16'>" +   
+                                                                        "<img src='https://www.w3schools.com/w3images/avatar6.png' class='w3-left w3-circle w3-margin-right' style='width:35px'>" +
+                                                                        "<span class='w3-xlarge'>" + myObj + "</span><br></br>";
             };
             xmlhttp.open("GET", "../usuario.json");
             xmlhttp.send();
