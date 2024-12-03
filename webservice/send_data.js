@@ -1,14 +1,15 @@
 async function usuario() {
     let ipAddress;
+    let characterData;
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
             ipAddress = data.ip;
-            let teste = CharacterData.name();
-            alert(teste);
+            characterData = CharacterData.name();
             setIpAddress(ipAddress);
             alert("Novo Usuário(a): " + getIpAddress());
             ipAddress += "<p id='" + ipAddress + "'>" + "</p>";
+            alert(characterData);
             console.log(data.ip);
         })
         .catch(error => {
