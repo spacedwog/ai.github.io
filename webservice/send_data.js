@@ -14,7 +14,7 @@ async function usuario() {
                 const myObj = JSON.parse(ipAddress);
                 document.getElementById("demo").innerHTML = myObj.name;
             };
-            xmlhttp.open("POST", "usuario.json");
+            xmlhttp.open("GET", "../usuario.json");
             xmlhttp.send();
         })
         .catch(error => {
