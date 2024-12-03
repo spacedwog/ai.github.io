@@ -12,8 +12,8 @@ async function usuario() {
             const xmlhttp = new XMLHttpRequest();
             alert("Requesito html");
             xmlhttp.onload = function() {
-                const myObj = JSON.parse(ipAddress);
-                alert("xmlhttp: " + ipAddress);
+                alert("xmlhttp: " + myObj);
+                const myObj = JSON.parse(getIpAddress());
                 document.getElementById("ul_usuarios").innerHTML = "<li class='w3-padding-16'>" +   
                                                                         "<img src='https://www.w3schools.com/w3images/avatar6.png' class='w3-left w3-circle w3-margin-right' style='width:35px'>" +
                                                                         "<span class='w3-xlarge'>" + myObj + "</span><br></br>"
