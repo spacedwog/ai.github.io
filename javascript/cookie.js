@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     console.log(document.getElementById("accept-cookies"));
+    console.log(localStorage.getItem("cookiesAccepted"));
 
     // Ação ao clicar no botão de aceitar
     document.getElementById("accept-cookies").addEventListener("click", () => {
